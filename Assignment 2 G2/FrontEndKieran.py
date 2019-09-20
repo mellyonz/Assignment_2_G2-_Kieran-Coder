@@ -35,7 +35,7 @@ class TkinterInterface:
         self.window.selectParser = tkinter.Label(self.window, text="Select Parser")
         self.window.selectParser.grid(column=4, row=0)
 
-        self.window.comboParser = Combobox(self.window, values=["ParserDang", "ParserJerry", "ParserJonathanV2"])
+        self.window.comboParser = Combobox(self.window, values=["ParserKC", "ParserJerry", "ParserJonathanV2"])
         self.window.comboParser.set(self.config[1])
         self.window.comboParser.grid(column=5, row=0)
 

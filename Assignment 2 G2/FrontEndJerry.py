@@ -39,7 +39,7 @@ class GuiInterface:
         self.master.selectParser = tkinter.Label(self.master, text="Select Parser")
         self.master.selectParser.pack(side='left', fill='both', expand='yes')
 
-        self.master.comboParser = Combobox(self.master, values=["ParserDang", "ParserJerry", "ParserJonathanV2"])
+        self.master.comboParser = Combobox(self.master, values=["ParserKC", "ParserJerry", "ParserJonathanV2"])
         self.master.comboParser.set(self.config[1])
         self.master.comboParser.pack(side='left', fill='both', expand='yes')
 

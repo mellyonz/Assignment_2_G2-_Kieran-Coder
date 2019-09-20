@@ -25,8 +25,8 @@ if __name__ == '__main__':
     elif config[0] == 'DrawerTurtleJack':
         from DrawerTurtleJack import Drawer
 
-    if config[1] == 'ParserDang':
-        from ParserDang import Parser
+    if config[1] == 'ParserKC':
+        from ParserKC import Parser
     elif config[1] == 'ParserJerry':
         from ParserJerry import Parser
     elif config[1] == 'ParserJonathanV2':
