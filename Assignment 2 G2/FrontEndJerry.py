@@ -24,7 +24,7 @@ class GuiInterface:
         screenheight = self.master.winfo_screenheight()
         center = '%dx%d+%d+%d' % (width, height, (screenwidth - 800) / 2, (screenheight - height) / 2)
         self.master.geometry(center)
-        self.master.draw_btn = Button(self.master, text='Draw', command=self.to_draw)
+        self.master.draw_btn = Button(self.master, text='Draw', command=self.draw)
         self.master.draw_btn.pack(side='left', fill='both', expand='yes')
         self.master.import_btn = Button(self.master, text='import', command=self.to_import)
         self.master.import_btn.pack(side='left', fill='both', expand='yes')
@@ -72,8 +72,7 @@ class GuiInterface:
                    + self.master.comboParser.get() + '\n'
                    + self.master.comboInterface.get())
         file.close()
-        python = sys.executable
-        os.execl(python, python, *sys.argv)
+        self.master.destroy()
 
     def insert_text(self, row_source):
         self.master.text.insert('0.0', row_source)
