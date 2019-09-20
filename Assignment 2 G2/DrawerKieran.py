@@ -6,16 +6,17 @@ from TIGr import AbstractDrawer
 
 
 class Drawer(AbstractDrawer):
-    x_pos = 0
+    x_pos = 00
     y_pos = 0
-
-    # config = open('config.txt', "r+").read().splitlines()
-    # if config[2] == 'FrontEndKieran':
-    #     from FrontEndKieran import TkinterInterface
-    #     this_canvas = TkinterInterface.canvas
-    # elif config[2] == 'FrontEndJerry':
-    #     from FrontEndJerry import GuiInterface
-    #     this_canvas = GuiInterface.canvas
+    config = open('config.txt', "r+")
+    c = config.read().splitlines()
+    if c[2] == 'FrontEndKieran':
+        from FrontEndKieran import TkinterInterface
+        this_canvas = TkinterInterface.canvas
+    elif c[2] == 'FrontEndJerry':
+        from FrontEndJerry import GuiInterface
+        this_canvas = GuiInterface.canvas
+    config.close()
 
     def __init__(self):
         self.test_string = ''
@@ -51,8 +52,8 @@ class Drawer(AbstractDrawer):
             direction = (math.pi * 2) / (360 / direction)
             new_x = distance * math.sin(direction)
             new_y = -distance * math.cos(direction)
-            # self.this_canvas.create_line(self.x_pos, self.y_pos, self.x_pos + new_x, self.y_pos + new_y,
-            #                              fill=self.colour)
+            self.this_canvas.create_line(self.x_pos, self.y_pos, self.x_pos + new_x, self.y_pos + new_y,
+                                         fill=self.colour)
             self.x_pos += new_x
             self.y_pos += new_y
             self.test_string += f'drawing line of length {distance} at {direction} degrees'
