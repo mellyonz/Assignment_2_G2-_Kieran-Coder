@@ -65,6 +65,5 @@ class Drawer(AbstractDrawer):
             self.this_canvas.create_line(self.src_x, self.src_y, self.des_x, self.des_y, fill=self.colour)
             self.test_string += f'drawing line of length {distance} at {direction} degrees'
 
-
         self.src_x, self.src_y = self.des_x, self.des_y
         # print("source_x == " + str(self.src_x) + "source_y == " + str(self.src_y))

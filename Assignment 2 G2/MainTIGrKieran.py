@@ -2,7 +2,6 @@
 from TIGr import AbstractSourceReader
 
 
-
 class MainTIGr(AbstractSourceReader):
 
     def go(self):
