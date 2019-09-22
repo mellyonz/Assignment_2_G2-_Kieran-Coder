@@ -29,10 +29,14 @@ class Parser(AbstractParser):
             self.command = inputs[0].upper()
             # Number has to be greater than 0
             if len(self.data) > 0:
-                # make it a whole number
+                # Make it a whole number
                 self.data = int(float(self.data[0]))
-            # if command from input in the look table
-            if self.command[0] in self.commandlist:
-                # basically import the command and in the process it add the data.
+            # If command from input in the look table
+            try:
+                # Basically import the command and in the process it add the data.
                 parsed_command = self.commandlist[self.command[0]]
                 exec(parsed_command)
+            except ValueError as e:
+                print(f'{e}: Value outside boundary')
+            except KeyError as e:
+                print(f'{e}: Not a command')
