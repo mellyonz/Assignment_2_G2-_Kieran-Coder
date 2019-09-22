@@ -17,7 +17,6 @@ class Parser(AbstractParser):
                 direction = ''.join(re.findall(r'[A-Z]', command[index]))
                 try:
                     data = int(''.join(re.findall(r'\d+', command[index])))
-
                     if direction == 'P':
                         self.drawer.select_pen(data)
                     if direction == 'G':
