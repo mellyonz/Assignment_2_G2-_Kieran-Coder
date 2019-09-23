@@ -45,9 +45,10 @@ class Drawer(AbstractDrawer):
 
     def draw_line(self, direction, distance):
         if self.can_draw:
+            self.test_string += f'drawing line of length {distance} at {direction} degrees'
             if direction == 0:
                 direction = 360
-            # test a direction angle direction = 30 Angle direction needs to be converted a decimal and divided into
+            # Test a direction angle direction = 30 Angle direction needs to be converted a decimal and divided into
             # pie. This is required math.sin and math.cos
             direction = (math.pi * 2) / (360 / direction)
             new_x = distance * math.sin(direction)
@@ -56,4 +57,4 @@ class Drawer(AbstractDrawer):
                                          fill=self.colour)
             self.x_pos += new_x
             self.y_pos += new_y
-            self.test_string += f'drawing line of length {distance} at {direction} degrees'
+

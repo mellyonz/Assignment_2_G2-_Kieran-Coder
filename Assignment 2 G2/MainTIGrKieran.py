@@ -1,35 +1,32 @@
 # created by Kieran Jerry Jonathon
 from TIGr import AbstractSourceReader
-
+from ParserJonathanV2 import Parser
 
 class MainTIGr(AbstractSourceReader):
 
     def go(self):
         global interface
-        if config[2] == 'FrontEndKieran':
+        config = open('config.txt', "r+")
+        c = config.read().splitlines()
+        if c[2] == 'FrontEndKieran':
             from FrontEndKieran import TkinterInterface
             interface = TkinterInterface(self)
-        elif config[2] == 'FrontEndJerry':
+        elif c[2] == 'FrontEndJerry':
             from FrontEndJerry import GuiInterface
             interface = GuiInterface(self)
+
+        config.close()
         interface.start()
 
 
 if __name__ == '__main__':
-    config = open('config.txt', "r+").read().splitlines()
-    if config[0] == 'DrawerKieran':
+    config = open('config.txt', "r+")
+    c = config.read().splitlines()
+    if c[0] == 'DrawerKieran':
         from DrawerKieran import Drawer
-    elif config[0] == 'DrawerJack':
-        from DrawerJack import Drawer
-    elif config[0] == 'DrawerTurtleJack':
+    elif c[0] == 'DrawerTurtleJack':
         from DrawerTurtleJack import Drawer
-
-    if config[1] == 'ParserKC':
-        from ParserKC import Parser
-    elif config[1] == 'ParserJerry':
-        from ParserJerry import Parser
-    elif config[1] == 'ParserJonathanV2':
-        from ParserJonathanV2 import Parser
+    config.close()
 
     main = MainTIGr(Parser(Drawer()))
     main.go()

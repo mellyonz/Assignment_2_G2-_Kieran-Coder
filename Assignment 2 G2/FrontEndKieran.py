@@ -64,7 +64,7 @@ class TkinterInterface:
                    + self.window.comboParser.get() + '\n'
                    + self.window.comboInterface.get())
         file.close()
-        self.master.destroy()
+        self.window.destroy()
 
     def draw(self):
         self.SourceReader.parser.parse(self.toDraw)
