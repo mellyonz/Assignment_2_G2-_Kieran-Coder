@@ -1,4 +1,4 @@
-from TIGr import AbstractDrawer, AbstractParser, AbstractSourceReader
+from TIGr import AbstractDrawer, AbstractParser, AbstractInterface
 
 """These implementations should be replaced,
 by more flexible, portable and extensible solutions.
@@ -62,11 +62,22 @@ class Parser(AbstractParser):
                 self.drawer.pen_up()
 
 
-class SourceReader(AbstractSourceReader):
+class SourceReader(AbstractInterface):
     """ responsible for providing source text for parsing and drawing
         Initiates the Draw use-case.
         Links to a parser and passes the source text onwards
     """
+
+    def __init__(self, parser):
+        super().__init__(parser)
+        self.source = []
+        self.file_name = None
+
+    def create_interface(self):
+        pass
+
+    def open_config(self):
+        pass
 
     def go(self):
         self.source.append('P 2 # select pen 2')

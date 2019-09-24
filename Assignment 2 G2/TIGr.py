@@ -53,7 +53,7 @@ class AbstractInterface(ABC):
         Links to a parser and passes the source text onwards
     """
 
-    def __init__(self, parser, optional_file_name=None):
+    def __init__(self, parser):
         self.parser = parser
         self.interface = None
         self.config = None

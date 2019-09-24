@@ -6,7 +6,7 @@ from ParserJonathanV2 import Parser
 class MainTIGr(AbstractInterface):
 
     def __init__(self, parser):
-        super().__init__(parser, optional_file_name=None)
+        super().__init__(parser)
 
     def create_interface(self):
         c = self.open_config()
