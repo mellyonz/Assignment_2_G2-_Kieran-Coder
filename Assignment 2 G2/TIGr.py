@@ -1,8 +1,9 @@
 from abc import ABC, abstractmethod
 
-""" Tiny Interpreted GRaphic = TIGR
-Keep the interfaces defined below in your work.
- """
+"""
+    Tiny Interpreted Graphic = TIGr
+    Keep the interfaces defined below in your work.
+"""
 
 
 class AbstractDrawer(ABC):
@@ -46,7 +47,8 @@ class AbstractParser(ABC):
 
 
 class AbstractInterface(ABC):
-    """ responsible for providing source text for parsing and drawing
+    """
+        Responsible for providing source text for parsing and drawing
         Initiates the Draw use-case.
         Links to a parser and passes the source text onwards
     """
@@ -57,7 +59,6 @@ class AbstractInterface(ABC):
         self.source = []
         self.interface = None
         self.config = None
-
 
     @abstractmethod
     def create_interface(self):

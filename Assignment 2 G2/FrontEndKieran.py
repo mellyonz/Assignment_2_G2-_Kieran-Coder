@@ -1,6 +1,5 @@
-# created by Kieran Jerry Jonathon
+# Created by Kieran Jerry Jonathon
 import os
-import sys
 import tkinter
 from tkinter import filedialog
 from tkinter.ttk import Combobox
