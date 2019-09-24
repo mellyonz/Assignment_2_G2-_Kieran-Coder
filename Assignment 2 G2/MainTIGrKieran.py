@@ -1,22 +1,28 @@
 # created by Kieran Jerry Jonathon
-from TIGr import AbstractSourceReader
+from TIGr import AbstractInterface
 from ParserJonathanV2 import Parser
 
-class AbstractInterface(AbstractSourceReader):
+class MainTIGr(AbstractInterface):
 
-    def go(self):
-        global interface
-        config = open('config.txt', "r+")
-        c = config.read().splitlines()
+    def __init__(self, parser):
+        super().__init__(parser, optional_file_name=None)
+
+    def create_interface(self):
+        c = self.open_config()
         if c[2] == 'FrontEndKieran':
             from FrontEndKieran import TkinterInterface
-            interface = TkinterInterface(self)
+            self.interface = TkinterInterface(self)
         elif c[2] == 'FrontEndJerry':
             from FrontEndJerry import GuiInterface
-            interface = GuiInterface(self)
+            self.interface = GuiInterface(self)
+        self.interface.start()
 
-        config.close()
-        interface.start()
+    def open_config(self):
+        config = open('config.txt', "r+")
+        return config.read().splitlines()
+
+    def go(self):
+        self.create_interface()
 
 
 if __name__ == '__main__':
