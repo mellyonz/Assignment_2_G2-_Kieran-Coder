@@ -2,7 +2,7 @@
 from TIGr import AbstractSourceReader
 from ParserJonathanV2 import Parser
 
-class MainTIGr(AbstractSourceReader):
+class AbstractInterface(AbstractSourceReader):
 
     def go(self):
         global interface

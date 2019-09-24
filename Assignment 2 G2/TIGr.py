@@ -45,7 +45,7 @@ class AbstractParser(ABC):
         pass
 
 
-class AbstractSourceReader(ABC):
+class AbstractInterface(ABC):
     """ responsible for providing source text for parsing and drawing
         Initiates the Draw use-case.
         Links to a parser and passes the source text onwards
@@ -55,6 +55,17 @@ class AbstractSourceReader(ABC):
         self.parser = parser
         self.file_name = optional_file_name
         self.source = []
+        self.interface = None
+        self.config = None
+
+
+    @abstractmethod
+    def create_interface(self):
+        pass
+
+    @abstractmethod
+    def open_config(self):
+        pass
 
     @abstractmethod
     def go(self):
