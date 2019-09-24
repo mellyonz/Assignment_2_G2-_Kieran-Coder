@@ -55,8 +55,6 @@ class AbstractInterface(ABC):
 
     def __init__(self, parser, optional_file_name=None):
         self.parser = parser
-        self.file_name = optional_file_name
-        self.source = []
         self.interface = None
         self.config = None
 
