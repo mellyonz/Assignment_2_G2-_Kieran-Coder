@@ -19,8 +19,8 @@ class MainTIGr(AbstractInterface):
         self.interface.start()
 
     def open_config(self):
-        config = open('config.txt', "r+")
-        return config.read().splitlines()
+        self.config = open('config.txt', "r+")
+        return self.config.read().splitlines()
 
     def go(self):
         self.create_interface()
