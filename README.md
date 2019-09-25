@@ -13,7 +13,7 @@ The program is fully functional now
 8. The system can parse the commands from text file
 
 ## Interfaces(Abstract classes) to be tested
-* AbstractSourceReader
+* AbstractSourceReader: rename(AbstractInterface)
 * AbstractParser
 * AbstractDrawer
 
