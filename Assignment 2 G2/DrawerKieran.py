@@ -25,27 +25,27 @@ class Drawer(AbstractDrawer):
 
     def select_pen(self, pen_num):
         self.colour = MyEnums.Pen.colours[pen_num]
-        self.test_string += f'Selected pen {pen_num}'
+        print(f'Selected pen {pen_num}')
 
     def pen_down(self):
         self.can_draw = True
-        self.test_string += 'pen down'
+        print('pen down')
 
     def pen_up(self):
         self.can_draw = False
-        self.test_string += 'pen up'
+        print('pen up')
 
     def go_along(self, along):
         self.x_pos = along
-        self.test_string += f'GOTO X={along}'
+        print(f'GOTO X={along}')
 
     def go_down(self, down):
         self.y_pos = down
-        self.test_string += f'GOTO X={down}'
+        print(f'GOTO X={down}')
 
     def draw_line(self, direction, distance):
         if self.can_draw:
-            self.test_string += f'drawing line of length {distance} at {direction} degrees'
+            print(f'drawing line of length {distance} at {direction} degrees')
             if direction == 0:
                 direction = 360
             # Test a direction angle direction = 30 Angle direction needs to be converted a decimal and divided into
