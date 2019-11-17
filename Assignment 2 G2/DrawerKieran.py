@@ -57,4 +57,3 @@ class Drawer(AbstractDrawer):
                                          fill=self.colour)
             self.x_pos += new_x
             self.y_pos += new_y
-
